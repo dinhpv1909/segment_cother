@@ -58,7 +58,7 @@ def training_loop(opt):
         # Unique only on individual node.
         device = torch.device(f"cuda:{local_rank}")
     else:
-        device = torch.device("cuda:0")
+        device = torch.device("cuda")
         local_rank = 0
 
     u_net = U2NET(in_ch=3, out_ch=4)
