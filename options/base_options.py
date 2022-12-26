@@ -19,7 +19,7 @@ class parser(object):
 
         self.batchSize = 2  # 12
         self.nThreads = 2  # 3
-        self.max_dataset_size = int("inf")
+        self.max_dataset_size = float("inf")
 
         self.serial_batches = False
         self.continue_train = True

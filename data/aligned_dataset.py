@@ -33,9 +33,9 @@ class AlignedDataset(BaseDataset):
 
         self.df = pd.read_csv(self.df_path)
         self.image_info = collections.defaultdict(dict)
-        self.df["CategoryId"] = self.df.ClassId.apply(lambda x: str(x).split("_")[0])
+        self.df["ClassId"] = self.df.ClassId.apply(lambda x: str(x).split("_")[0])
         temp_df = (
-            self.df.groupby("ImageId")["EncodedPixels", "CategoryId"]
+            self.df.groupby("ImageId")["EncodedPixels", "ClassId"]
             .agg(lambda x: list(x))
             .reset_index()
         )
@@ -48,7 +48,7 @@ class AlignedDataset(BaseDataset):
             self.image_info[index]["image_path"] = image_path
             self.image_info[index]["width"] = self.width
             self.image_info[index]["height"] = self.height
-            self.image_info[index]["labels"] = row["CategoryId"]
+            self.image_info[index]["labels"] = row["ClassId"]
             self.image_info[index]["orig_height"] = row["Height"]
             self.image_info[index]["orig_width"] = row["Width"]
             self.image_info[index]["annotations"] = row["EncodedPixels"]
