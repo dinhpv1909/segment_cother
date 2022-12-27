@@ -48,7 +48,7 @@ def data_sampler(dataset, shuffle, distributed):
 def sample_data(loader):
     while True:
         for batch in loader:
-            return batch
+            yield batch
 
 
 class CustomTestDataLoader(BaseDataLoader):

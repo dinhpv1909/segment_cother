@@ -22,9 +22,9 @@ class parser(object):
         self.max_dataset_size = float("inf")
 
         self.serial_batches = False
-        self.continue_train = True
+        self.continue_train = False
         if self.continue_train:
-            self.unet_checkpoint = "/kaggle/working/segment_cother/prev_checkpoints/cloth_segm_unet_surgery.pth"
+            self.unet_checkpoint = "/prev_checkpoints/cloth_segm_unet_surgery.pth"
 
         self.save_freq = 1000
         self.print_freq = 10
