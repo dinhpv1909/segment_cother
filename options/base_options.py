@@ -18,7 +18,7 @@ class parser(object):
         self.std = 0.5
 
         self.batchSize = 12  # 12
-        self.nThreads = 3  # 3
+        self.nThreads = 1  # 3
         self.max_dataset_size = float("inf")
 
         self.serial_batches = False
